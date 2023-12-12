@@ -1,41 +1,52 @@
 /* header */
 header {
   padding-top: 20px;
+  padding-bottom: 40px;
+
   @include tab {
     padding-top: 7px;
     padding-bottom: 20px;
   }
+
   .logo {
     width: 125px;
+
     @include tab {
       width: 80px;
     }
   }
+
   .right {
     @include tab {
       display: flex;
       padding-top: 7px;
     }
+
     .sns_list {
       a {
         width: 47px;
         margin-right: 15px;
+
         @include tab {
           width: 35px;
         }
       }
     }
+
     .hours {
       @include tab {
         display: none;
       }
+
       p {
         font-size: 24px;
       }
     }
   }
+
   .nav_pc {
     padding: 20px 0;
+
     @include tab {
       display: none;
     }
@@ -47,34 +58,39 @@ header {
 // ハンバーガー
 .menu_btn {
   display: none;
+
   @include tab {
-  display: block;
-  width: 60px;
-  height: 30px;
-  position: relative;
-  margin-top: 10px;
-  z-index: 4000;
-  span {
-    display: inline-block;
-    height: 4px;
-    width: 35px;
-    background-color: #000;
-    border-radius: 10px;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: .3s;
-    &:nth-child(1) {
-      top: 5px;
+    display: block;
+    width: 60px;
+    height: 30px;
+    position: relative;
+    margin-top: 10px;
+    z-index: 4000;
+
+    span {
+      display: inline-block;
+      height: 4px;
+      width: 35px;
+      background-color: #000;
+      border-radius: 10px;
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: .3s;
+
+      &:nth-child(1) {
+        top: 5px;
+      }
+
+      &:nth-child(2) {
+        top: 15px;
+      }
+
+      &:nth-child(3) {
+        top: 25px;
+      }
     }
-    &:nth-child(2) {
-      top: 15px;
-    }
-    &:nth-child(3) {
-      top: 25px;
-    }
-  }
   }
 }
 
@@ -90,38 +106,43 @@ header {
   transition: 500ms ease-out;
   padding: 90px 0 0;
   text-align: center;
+
   li {
-      margin-bottom: 20px;
-      a {
-          color: #000;
-          font-size: 18px;
-      }
+    margin-bottom: 20px;
+
+    a {
+      color: #000;
+      font-size: 18px;
+    }
   }
 }
 
-  // open後
-  .open .menu_btn {
-    z-index: 1000;
-    span {
-      &:nth-child(1) {
-        transform: translate(-50%, -50%) rotate(45deg);
-        top: 50% !important;
-        left: 50%;
-      }
-      &:nth-child(2) {
-        opacity: 0;
-      }
-      &:nth-child(3) {
-        transform: translate(-50%, -50%) rotate(-45deg);
-        top: 50% !important;
-        left: 50%;
-      }
-    }
-  }
+// open後
+.open .menu_btn {
+  z-index: 1000;
 
-  .open {
-    .nav_sp {
-      opacity: 1 !important;
-      left: 0 !important;
+  span {
+    &:nth-child(1) {
+      transform: translate(-50%, -50%) rotate(45deg);
+      top: 50% !important;
+      left: 50%;
+    }
+
+    &:nth-child(2) {
+      opacity: 0;
+    }
+
+    &:nth-child(3) {
+      transform: translate(-50%, -50%) rotate(-45deg);
+      top: 50% !important;
+      left: 50%;
     }
   }
+}
+
+.open {
+  .nav_sp {
+    opacity: 1 !important;
+    left: 0 !important;
+  }
+}
